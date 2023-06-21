@@ -25,11 +25,11 @@ class SearchKeysHelper
     /**
      * Analyzing search keys within search request and adjusting request accordingly
      *
-     * @param \Zend\StdLib\Parameters $request Parameter object representing user
+     * @param \Laminas\StdLib\Parameters $request Parameter object representing user
      * request.
      * @param \VuFind\Config $config Configuration object
      *
-     * @return \Zend\StdLib\Parameters $request
+     * @return \Laminas\StdLib\Parameters $request
      */
     public function processSearchKeys($request, $options, $config, $searchClassId)
     {
