@@ -53,6 +53,11 @@ class Params extends BaseParams
         }
         parent::initSearch($request);
     }
+    
+    // eWW Bugfix
+    public function getFilters () {
+	    return $this->getFilterSettings();
+    }
 }
 
 
