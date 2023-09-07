@@ -42,7 +42,7 @@ class SearchBox extends \VuFind\View\Helper\Root\SearchBox
             $searchKeys = $this->searchkeysConfig[$keyClass];
         }
         $keyClass = 'phraseKeys-' . strtolower($activeSearchClass);
-        if ($this->searchkeysConfig[$keyClass]) {
+        if (isset($this->searchkeysConfig[$keyClass])) {
             foreach ($this->searchkeysConfig[$keyClass] as $searchKey) {
                 $searchKeys[] = $searchKey;
             }
