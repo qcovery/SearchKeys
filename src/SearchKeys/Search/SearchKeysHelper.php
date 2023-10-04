@@ -57,7 +57,7 @@ class SearchKeysHelper
         }
         $this->boolRegex = implode('|', $boolRegexList);
 
-        $originalLookfor = trim(preg_replace('/\s+/', ' ', $request->get('lookfor')));
+        $originalLookfor = trim(preg_replace('/\s+/', ' ', $request->get('lookfor') ?? ''));
         $originalLookfor = preg_replace('/""+/', '"', $originalLookfor);
         $orignalType = $request->get('type') ?? $options->getDefaultHandler();
         if (!preg_match('#' . $fullKeyRegex . '#', $originalLookfor)) {
