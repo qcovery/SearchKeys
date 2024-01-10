@@ -1,7 +1,6 @@
 <?php
 /**
-
-
+ * Search box view helper
  */
 namespace SearchKeys\View\Helper\SearchKeys;
 use VuFind\Search\Options\PluginManager as OptionsManager;
@@ -33,6 +32,16 @@ class SearchBox extends \VuFind\View\Helper\Root\SearchBox
         parent::__construct($optionsManager, $config, $placeholders, $alphabrowseConfig);
     }
 
+    /**
+     * Get an array of information on search handlers for use in generating a
+     * drop-down or hidden field. Returns an array of arrays with 'value', 'label',
+     * 'indent' and 'selected' keys.
+     *
+     * @param string $activeSearchClass Active search class ID
+     * @param string $activeHandler     Active search handler
+     *
+     * @return array
+     */
     public function getHandlers($activeSearchClass, $activeHandler)
     {
         $handlers = [];
@@ -56,6 +65,14 @@ class SearchBox extends \VuFind\View\Helper\Root\SearchBox
         return $handlers;
     }
 
+    /**
+     * Get an array of information on search handlers for use in generating a
+     * drop-down or hidden field.
+     *
+     * @param string $activeSearchClass Active search class ID
+     *
+     * @return array
+     */
     public function getAdvancedHandlers($activeSearchClass) {
         $handlers = [];
         $keyClass = 'keys-' . strtolower($activeSearchClass);
