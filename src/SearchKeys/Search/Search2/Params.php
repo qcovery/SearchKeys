@@ -69,7 +69,7 @@ class Params extends \VuFind\Search\Search2\Params
     /**
      * Initialize the object's search settings from a request object.
      *
-     * @param \Zend\StdLib\Parameters $request Parameter object representing user
+     * @param \Laminas\StdLib\Parameters $request Parameter object representing user
      * request.
      *
      * @return void

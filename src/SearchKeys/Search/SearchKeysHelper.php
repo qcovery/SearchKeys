@@ -25,11 +25,11 @@ class SearchKeysHelper
     /**
      * Analyzing search keys within search request and adjusting request accordingly
      *
-     * @param \Zend\StdLib\Parameters $request Parameter object representing user
+     * @param \Laminas\StdLib\Parameters $request Parameter object representing user
      * request.
      * @param \VuFind\Config $config Configuration object
      *
-     * @return \Zend\StdLib\Parameters $request
+     * @return \Laminas\StdLib\Parameters $request
      */
     public function processSearchKeys($request, $options, $config, $searchClassId)
     {
@@ -57,7 +57,7 @@ class SearchKeysHelper
         }
         $this->boolRegex = implode('|', $boolRegexList);
 
-        $originalLookfor = trim(preg_replace('/\s+/', ' ', $request->get('lookfor')));
+        $originalLookfor = trim(preg_replace('/\s+/', ' ', $request->get('lookfor') ?? ''));
         $originalLookfor = preg_replace('/""+/', '"', $originalLookfor);
         $orignalType = $request->get('type') ?? $options->getDefaultHandler();
         if (!preg_match('#' . $fullKeyRegex . '#', $originalLookfor)) {

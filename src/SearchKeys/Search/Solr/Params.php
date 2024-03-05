@@ -38,7 +38,7 @@ class Params extends BaseParams
     /**
      * Initialize the object's search settings from a request object.
      *
-     * @param \Zend\StdLib\Parameters $request Parameter object representing user
+     * @param \Laminas\StdLib\Parameters $request Parameter object representing user
      * request.
      *
      * @return void
@@ -52,6 +52,11 @@ class Params extends BaseParams
             }  
         }
         parent::initSearch($request);
+    }
+    
+    // eWW Bugfix
+    public function getFilters () {
+	    return $this->getFilterSettings();
     }
 }
 
