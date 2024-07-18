@@ -84,4 +84,9 @@ class Params extends \VuFind\Search\Search2\Params
         }
         parent::initSearch($request);
     }
+
+    // eWW Bugfix
+    public function getFilters () {
+        return $this->getFilterSettings();
+    }
 }
