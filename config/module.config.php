@@ -25,7 +25,7 @@ $config = [
                     'search2' => 'SearchKeys\Search\Search2\Params',
                     'solr' => 'SearchKeys\Search\Solr\Params',
                     'VuFind\Search\Solr\Params' => 'SearchKeys\Search\Solr\Params',
-                    'VuFind\Search\Search2\Params' => 'SearchKeys\Search\Solr2\Params',
+                    'VuFind\Search\Search2\Params' => 'SearchKeys\Search\Search2\Params',
                 ],
             ],
         ],

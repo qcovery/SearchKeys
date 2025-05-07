@@ -55,8 +55,10 @@ class ParamsFactory implements FactoryInterface
      * creating a service.
      * @throws ContainerException if any other error occurs
      */
-    public function __invoke(ContainerInterface $container, $requestedName,
-        array $options = null
+    public function __invoke(
+        ContainerInterface $container,
+        $requestedName,
+        ?array $options = null
     ) {
         // Replace trailing "Params" with "Options" to get the options service:
         $optionsService = preg_replace('/Params$/', 'Options', $requestedName);
