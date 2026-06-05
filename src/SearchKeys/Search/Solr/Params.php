@@ -46,7 +46,7 @@ class Params extends BaseParams
     protected function initSearch($request)
     {
         if (empty($request->get('overrideIds', null))) {
-            $config = $this->configLoader->get('searchkeys');
+            $config = $this->configManager->get('searchkeys');
             if (isset($this->searchKeysHelper)) {
                 $request = $this->searchKeysHelper->processSearchKeys($request, $this->getOptions(), $config, 'Solr');
             }  

@@ -39,11 +39,12 @@ class SearchBox extends \VuFind\View\Helper\Root\SearchBox
      *
      * @param string $activeSearchClass Active search class ID
      * @param string $activeHandler     Active search handler
-     *
+     * @param array $hiddenFilters      Currently applied hidden filters (if any)
      * @return array
      */
-    public function getHandlers($activeSearchClass, $activeHandler)
+    public function getHandlers($activeSearchClass, $activeHandler, array $hiddenFilters = [])
     {
+        // Fixme: $hiddenFilters not used
         $handlers = [];
         $keyClass = 'keys-' . strtolower($activeSearchClass);
         $searchKeys = [];
